@@ -1,17 +1,17 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import { Beef } from "lucide-react";
+
+import { Navbar } from "./components/layout/navbar.jsx";
 
 export function App() {
   return (
-    <BrowserRouter>
-      <null /> {/* Placeholder for Navbar*/} 
-
+    <>
+      <Navbar />
       <Routes>
         <Route path="/" element={null} />
         <Route path="/projetos/:id" element={null} />
       </Routes>
 
       <null /> {/* Placeholder for Footer*/}
-    </BrowserRouter>
+    </>
   );
 }

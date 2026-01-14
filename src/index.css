@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+:root {
+  --fundoPrimario: #121212;
+  --fundoSecundario: #1a1a1a;
+  --cinzaClaro: #c1c1c1;
+}
