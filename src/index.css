@@ -1,7 +1,10 @@
 @import "tailwindcss";
 
 :root {
+  --fundoSite: #1e1e1e;
   --fundoPrimario: #121212;
   --fundoSecundario: #1a1a1a;
   --cinzaClaro: #c1c1c1;
+  --textoTema: #c0c0c0;
+  --textoDestaque: #00b4d8;
 }

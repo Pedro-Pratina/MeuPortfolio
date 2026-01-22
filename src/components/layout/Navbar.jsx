@@ -19,7 +19,7 @@ export function Navbar() {
 
     return (
         <>
-        <header className="bg-(--fundoSecundario) text-(--cinzaClaro) relative z-50">
+        <header className="relative bg-(--fundoSecundario) text-(--cinzaClaro) z-50">
             <nav className='flex items-center justify-between p-4'>
                 <span className="text-xl">&lt;PHRL /&gt;</span>
                 <button onClick={() => setMenuAtivo(!menuAtivo)} className='relative w-6 h-6'>
@@ -31,8 +31,9 @@ export function Navbar() {
             <div
                 className={`
                 overflow-hidden
-                transition-all duration-800 ease-in-out
-                relative z-50
+                transition-all duration-700 ease-in-out
+                absolute top-full z-50
+                w-full bg-(--fundoSecundario)
                 ${menuAtivo ? "max-h-64 opacity-100" : "max-h-0 opacity-0"}
             `}>
                 <div className="flex flex-col gap-4 px-4 pb-4">
@@ -47,9 +48,11 @@ export function Navbar() {
         {menuAtivo && (
         <div
             onClick={() => setMenuAtivo(false)}
-            className={`fixed inset-0 bg-black/50 z-40
-            transition-opacity duration-800
-            ${menuAtivo ? "opacity-50" : "opacity-0 "}`}
+                className={`
+                    fixed inset-0 bg-black z-40
+                    transition-opacity duration-800
+                    ${menuAtivo ? "opacity-50 pointer-events-auto" : "opacity-0 pointer-events-none"}
+            `}
         />)}
         </>
     )
