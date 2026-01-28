@@ -1,4 +1,4 @@
-import { skills } from "../../data/Skills";
+import { skills } from "../../data/skills";
 import { SkillCard } from "../../components/ui/SkillCard";
 
 export function HabilidadesSection() {
