@@ -1,5 +1,6 @@
 import { IntroducaoSection } from "../sections/Home/IntroducaoSection";
 import { SobreMimSection } from "../sections/Home/SobreMimSection";
+import { HabilidadesSection } from "../sections/Home/HabilidadesSection";
 
 export function Home() {
     return (
@@ -11,6 +12,8 @@ export function Home() {
                 <hr className="w-full my-6 border-(--cinzaClaro)"/>
             </div>
             <SobreMimSection />
+            <div className="w-4/5"><hr className="w-full border-(--cinzaClaro) opacity-35"/></div>
+            <HabilidadesSection />
             <div className="w-4/5"><hr className="w-full border-(--cinzaClaro) opacity-35"/></div>
         </main>
     )
