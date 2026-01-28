@@ -1,4 +1,5 @@
 import { IntroducaoSection } from "../sections/Home/IntroducaoSection";
+import { SobreMimSection } from "../sections/Home/SobreMimSection";
 
 export function Home() {
     return (
@@ -9,6 +10,7 @@ export function Home() {
                 <span>SCROLL</span>
                 <hr className="w-full my-6 border-(--cinzaClaro)"/>
             </div>
+            <SobreMimSection />
         </main>
     )
 }
