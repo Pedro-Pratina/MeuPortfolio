@@ -1,5 +1,6 @@
 import { Header } from "./components/layout/Header";
 import { Apresentacao } from "./components/sections/Apresentacao";
+import { Sobre } from "./components/sections/Sobre";
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <Header />
       <main>
         <Apresentacao />
+        <Sobre />
       </main>
     </div>
   );

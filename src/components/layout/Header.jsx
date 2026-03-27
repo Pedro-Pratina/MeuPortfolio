@@ -1,11 +1,25 @@
+import { useEffect, useState } from "react";
 import { LuMoon, LuSun, LuMenu, LuX } from "react-icons/lu";
 
 export function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const theme = "light";
   const menuOpen = false;
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-lg shadow-lg shadow-cyan-500/15`}>
-      <nav className="container mx-auto p-4 flex items-center justify-between">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-white/80 backdrop-blur-lg shadow-lg shadow-cyan-500/10'
+          : 'bg-transparent'
+      }`}>
+      <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="text-2xl font-bold bg-linear-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
           {"<PHRL />"}
         </div>

@@ -3,7 +3,7 @@ import { FaCode, FaGear, FaArrowDown } from "react-icons/fa6";
 export function Apresentacao() {
     const skillApresentacao = ["React", "Node.js", "Tailwind", "MySQL", "JavaScript", "HTML5", "CSS3"];
     return (
-        <section id="apresentacao" className="min-h-screen flex items-center justify-center relative bg-linear-to-br from-gray-50 to-gray-100">
+        <section id="apresentacao" className="min-h-screen py-20 flex items-center justify-center relative bg-linear-to-br from-gray-50 to-gray-100">
             <div className="container mx-auto px-4 relative z-10">
                 <div className="max-w-4xl mx-auto text-center">
                     <div className="inline-flex items-center justify-center w-20 h-20 mb-8 rounded-2xl bg-linear-to-br from-cyan-500 to-blue-600 shadow-lg shadow-cyan-500/50">
