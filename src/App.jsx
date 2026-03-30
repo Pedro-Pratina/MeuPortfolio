@@ -2,6 +2,7 @@ import { Header } from "./components/layout/Header";
 import { Apresentacao } from "./components/sections/Apresentacao";
 import { Sobre } from "./components/sections/Sobre";
 import { Skills } from "./components/sections/Skills";
+import { Projetos } from "./components/sections/Projetos"
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Apresentacao />
         <Sobre />
         <Skills />
+        <Projetos />
       </main>
     </div>
   );
