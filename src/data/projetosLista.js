@@ -2,7 +2,7 @@ export const projetoLista = [
     {
         title: 'Voyager',
         description: 'Plataforma de estudos de astronomia, com login, dashboard e jogo interativo',
-        image: '/public/voyager.png',
+        image: '/Voyager.png',
         skill: ['HTML', 'CSS', 'JavaScript', 'MySQL', 'Sequelize'],
         github: '#',
         live: '#',
@@ -11,7 +11,7 @@ export const projetoLista = [
     {
         title: 'PI Restaurant',
         description: 'Site para restaurante com menu, reservas e sistema de avaliação, utilizando HTML, CSS, JavaScript, MySQL',
-        image: '/public/PIrestaurant.png',
+        image: '/PIrestaurant.png',
         skill: ['HTML', 'CSS', 'JavaScript', 'MySQL'],
         github: '#',
         live: '#',
