@@ -84,7 +84,7 @@ export function Contatos() {
                                     type="text"
                                     id="name"
                                     {...register("name", { required: "Nome obrigatório" })}
-                                    className="w-full px-4 py-3 rounded-xl bg-white border-gray-300 text-gray-900"
+                                    className="w-full px-4 py-3 rounded-xl bg-white border border-gray-300 text-gray-900"
                                     placeholder="Seu nome"
                                 />
                                 {errors.name && <span>{errors.name.message}</span>}
