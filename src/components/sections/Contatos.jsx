@@ -1,25 +1,14 @@
 import { LuMail, LuGithub, LuLinkedin, LuSend } from 'react-icons/lu';
 
 import { useForm } from 'react-hook-form';
-import { useRef } from 'react';
-import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 import toast from "react-hot-toast";
 import { ToastForm } from "../ui/ToastForm";
 
 export function Contatos() {
-    const captchaRef = useRef(null);
-
     const { register, handleSubmit, reset, formState:{errors, isSubmitting} } = useForm()
     const onSubmit = async (data) => {
         try {
-            const token = captchaRef.current.getResponse()
-
-            if (!token){
-                toast.custom((t) => (<ToastErro t={t} erro="Confirme o captcha"/>))
-                return
-            }
-
             const formData = new FormData();
                 formData.append("access_key", "a5453efe-e3fe-4d37-a1e0-d3d00a2bfc4a");
                 formData.append("name", data.name);
@@ -27,7 +16,7 @@ export function Contatos() {
                 formData.append("message", data.message);
                 formData.append("subject", "Novo contato do portfólio");
                 formData.append("from_name", "Portfólio");
-                formData.append("h-captcha-response", token);
+                formData.append("botcheck", data.botcheck);
 
             const resposta = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
@@ -35,15 +24,14 @@ export function Contatos() {
             })
             const resultado = await resposta.json()
             if(resultado.success){
-                toast.custom((t) => <ToastForm t={t} sucess mensagem="Mensagem enviada com sucesso" />)
+                toast.custom((t) => (<ToastForm t={t} sucess mensagem="Mensagem enviada com sucesso" />))
                 reset()
-                captchaRef.current.resetCaptcha()
             } else {
-                toast.custom((t) => {<ToastForm t={t} erro mensagem={resultado.message} />})
+                toast.custom((t) => (<ToastForm t={t} erro mensagem={resultado.message} />))
                 console.log(resultado.message)
             }
         } catch (error) {
-            toast.custom((t) => <ToastForm t={t} connect mensagem="Problema de conexão"/>);
+            toast.custom((t) => (<ToastForm t={t} connect mensagem="Problema de conexão"/>));
         }
     }
 
@@ -108,8 +96,13 @@ export function Contatos() {
                                 <input
                                     type="email"
                                     id="email"
-                                    {...register("email", { required: "Email obrigatório" })}
-                                    className="w-full px-4 py-3 rounded-xl bg-white border border-gray-300 text-gray-900 "
+                                    {...register("email", { required: "Email obrigatório",
+                                        pattern: {
+                                            value: /\S+@\S+\.\S+/,
+                                            message: "Email inválido"
+                                        }
+                                     })}
+                                    className={`w-full px-4 py-3 rounded-xl bg-white border text-gray-900 ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
                                     placeholder="seu@email.com"
                                 />
                                 {errors.email && <span>{errors.email.message}</span>}
@@ -127,7 +120,6 @@ export function Contatos() {
                                 />
                                 {errors.message && <span>{errors.message.message}</span>}
                             </div>
-                            <HCaptcha  sitekey="1e08c37c-dd66-4356-ab68-69f23c064506" ref={captchaRef} />
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
