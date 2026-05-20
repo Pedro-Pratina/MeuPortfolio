@@ -4,14 +4,12 @@ import { Sobre } from "./components/sections/Sobre";
 import { Skills } from "./components/sections/Skills";
 import { Projetos } from "./components/sections/Projetos"
 import { Contatos } from "./components/sections/Contatos";
-
-import { Toaster } from "react-hot-toast";
+import { Footer } from "./components/layout/Footer";
 
 function App() {
   return (
     <div className="min-h-screen bg-white scroll-smooth">
       <Header />
-      <Toaster position="top-right" reverseOrder={false} />
       <main>
         <Apresentacao />
         <Sobre />
@@ -19,6 +17,7 @@ function App() {
         <Projetos />
         <Contatos />
       </main>
+      <Footer />
     </div>
   );
 }

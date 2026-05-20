@@ -2,9 +2,6 @@ import { LuMail, LuGithub, LuLinkedin, LuSend } from 'react-icons/lu';
 
 import { useForm } from 'react-hook-form';
 
-import toast from "react-hot-toast";
-import { ToastForm } from "../ui/ToastForm";
-
 export function Contatos() {
   const socialLinks = [
     {
@@ -28,7 +25,7 @@ export function Contatos() {
   ];
 
     return (
-        <section id="contact" className="py-24 bg-gray-50 relative overflow-hidden">
+        <section id="contatos" className="py-24 bg-gray-50 relative overflow-hidden">
             <div className="absolute inset-0">
                 <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
                 <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
