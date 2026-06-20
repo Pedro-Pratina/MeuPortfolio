@@ -6,6 +6,8 @@ import { Projetos } from "./components/sections/Projetos"
 import { Contatos } from "./components/sections/Contatos";
 import { Footer } from "./components/layout/Footer";
 
+import { SpeedInsights } from "@vercel/speed-insights/react";
+
 function App() {
   return (
     <div className="min-h-screen bg-white dark:bg-black transition-colors scroll-smooth">
@@ -18,6 +20,8 @@ function App() {
         <Contatos />
       </main>
       <Footer />
+
+      <SpeedInsights />
     </div>
   );
 }
