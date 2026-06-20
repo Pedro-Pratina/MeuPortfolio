@@ -8,7 +8,7 @@ import { Footer } from "./components/layout/Footer";
 
 function App() {
   return (
-    <div className="min-h-screen bg-white scroll-smooth">
+    <div className="min-h-screen bg-white dark:bg-black transition-colors scroll-smooth">
       <Header />
       <main>
         <Apresentacao />
