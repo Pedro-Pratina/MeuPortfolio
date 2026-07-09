@@ -9,10 +9,10 @@ export function Apresentacao() {
                     <div className="inline-flex items-center justify-center w-20 h-20 mb-8 rounded-2xl bg-linear-to-br from-cyan-500 to-blue-600 shadow-lg shadow-cyan-500/50">
                         <FaCode size={40} className="text-white"/>
                     </div>
-                    <h1 className="text-5xl font-bold mb-6 bg-linear-to-r from-gray-900 via-cyan-600 to-blue-600 dark:from-white dark:via-cyan-400 dark:to-blue-400 bg-clip-text text-transparent">
+                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 bg-linear-to-r from-gray-900 via-cyan-600 to-blue-600 dark:from-white dark:via-cyan-400 dark:to-blue-400 bg-clip-text text-transparent">
                         Full-Stack <br/>Developer
                     </h1>
-                    <div className="flex items-center justify-center gap-3 mb-8 text-xl text-gray-600 dark:text-gray-400">
+                    <div className="flex items-center justify-center gap-3 mb-8 text-xl md:text-2xl text-gray-600 dark:text-gray-400">
                         <FaGear size={24} className="text-cyan-500 animate-spin [animation-duration:3s]"/>
                         <span>Construindo sonhos através do código, uma linha de cada vez</span>
                         <FaGear size={24} className="text-cyan-500 animate-spin [animation-duration:3s]"/>
